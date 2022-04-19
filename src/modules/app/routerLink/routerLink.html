@@ -1,0 +1,18 @@
+<template>
+	<template if:false={href}>
+		<button disabled={disabled} onclick={handleClick}>
+			<slot></slot>
+		</button>
+	</template>
+
+	<template if:true={href}>
+		<a
+			href={href}
+			title={title}
+			target={target}
+			onclick={handleClick}
+		>
+			<slot></slot>
+		</a>
+	</template>
+</template>

@@ -1,0 +1,14 @@
+ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	list-style: none;
+	align-items: center;
+	margin-left: -1rem;
+	margin-right: -1rem;
+}
+
+li {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}

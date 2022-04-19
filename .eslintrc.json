@@ -1,0 +1,27 @@
+{
+	"env": {
+		"browser": true,
+		"node": true,
+		"es2021": true
+	},
+	"extends": ["@salesforce/eslint-config-lwc/recommended", "prettier"],
+	"globals": {
+		"window": true,
+		"document": true,
+		"process": true
+	},
+	"plugins":["prettier"],
+	"rules": {
+		"prettier/prettier": ["error"],
+		"no-unused-vars": [
+			"error",
+			{
+				"varsIgnorePattern": "^_",
+				"argsIgnorePattern": "^_"
+			}
+		],
+		"no-throw-literal": "off",
+		"yoda": ["error", "always", { "onlyEquality": true }],
+			"@lwc/lwc/no-unknown-wire-adapters": "off"
+	}
+}

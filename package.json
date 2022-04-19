@@ -1,0 +1,39 @@
+{
+  "name": "lwr-demo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf __lwr_cache__",
+    "start": "cross-env NODE_ENV=development concurrently \"yarn server:web\" \"yarn server:lwr\"",
+    "server:web": "node src/server/server-web.js",
+    "server:lwr": "node src/server/server-lwr.js"
+  },
+  "devDependencies": {
+    "@babel/core": ">=7.11.0",
+    "@babel/eslint-parser": "^7",
+    "@lwc/eslint-plugin-lwc": "^1.1.1",
+    "@salesforce/eslint-config-lwc": "^3.2.1",
+    "@salesforce/eslint-plugin-lightning": "^1.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.10.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.1.1",
+    "postcss": "^8.3.5",
+    "prettier": "^2.6.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "@lwrjs/router": "^0.6.4",
+    "concurrently": "^7.1.0",
+    "express": "^4.17.3",
+    "http-proxy-middleware": "^2.0.4",
+    "lwc": "^2.13.0",
+    "lwr": "^0.6.4"
+  },
+  "engines": {
+    "node": ">=14.15.4 <17"
+  },
+  "packageManager": "yarn@3.2.0"
+}

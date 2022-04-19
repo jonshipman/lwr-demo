@@ -1,0 +1,19 @@
+{
+	"lwc": { "modules": [{ "dir": "$rootDir/src/modules" }] },
+	"bundleConfig": { "exclude": ["lwc"] },
+	"assets": [
+		{
+			"alias": "assetsDir",
+			"dir": "$rootDir/src/assets",
+			"urlPath": "/assets"
+		}
+	],
+	"routes": [
+		{
+			"id": "appRoot",
+			"path": "/*",
+			"rootComponent": "app/router",
+			"layoutTemplate": "$layoutsDir/index.html"
+		}
+	]
+}
