@@ -1,13 +1,11 @@
 import routes from 'app/routes';
 import { api, LightningElement, wire } from 'lwc';
-import { generateUrl, navigate, NavigationContext } from 'lwr/navigation';
+import { generateUrl, NavigationContext } from 'lwr/navigation';
 
 export default class RouterLink extends LightningElement {
 	@api href;
 	@api target;
 	@api title;
-	@api atts = {};
-	@api type;
 
 	@wire(NavigationContext) navContext;
 
@@ -17,6 +15,10 @@ export default class RouterLink extends LightningElement {
 				type: this.type,
 				attributes: this.atts,
 			});
+		}
+
+		if (this.href && 0 === this.href.indexOf(window.location.origin)) {
+			this.href = this.href.replace(window.location.origin, '');
 		}
 	}
 
@@ -31,13 +33,14 @@ export default class RouterLink extends LightningElement {
 
 		if (route) {
 			event.preventDefault();
-			const pageOptions = { ...route.page, attributes: this.atts };
 
-			if (this.type) {
-				pageOptions.type = this.type;
-			}
-
-			navigate(this.navContext, pageOptions);
+			/**
+			 * There's no clear way to navigate to a nested route in LWR. A way around
+			 * this it to push the desired location into history and then go back one.
+			 */
+			window.history.pushState({}, '', this.href);
+			window.history.pushState({}, '', this.href);
+			window.history.back();
 		}
 	}
 }
