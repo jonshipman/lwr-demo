@@ -1,4 +1,4 @@
-export default function RouterHandler(module) {
+export default async function RouterHandler(module) {
 	class _RouterHandler {
 		callback;
 
@@ -11,7 +11,7 @@ export default function RouterHandler(module) {
 		update() {
 			this.callback({
 				viewset: {
-					default: () => import(module),
+					default: module,
 				},
 			});
 		}

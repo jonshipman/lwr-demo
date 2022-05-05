@@ -4,13 +4,13 @@ const routes = [
 	{
 		id: 'home',
 		uri: '/',
-		handler: () => RouterHandler('page/home'),
+		handler: () => RouterHandler(() => import('page/home')),
 		page: { type: 'home' },
 	},
 	{
 		id: 'about',
 		uri: '/about',
-		handler: () => RouterHandler('page/about'),
+		handler: () => RouterHandler(() => import('page/about')),
 		page: { type: 'about' },
 	},
 ];
