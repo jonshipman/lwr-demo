@@ -27,7 +27,7 @@ export default class RouterLink extends LightningElement {
 
 		if (!route) {
 			route = routes.find(
-				(x) => false === x.exact && 0 === this.href.indexOf(x.uri)
+				(x) => false === x.exact && 0 === this.href.indexOf(x.uri + '/')
 			);
 		}
 
