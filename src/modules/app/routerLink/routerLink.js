@@ -34,13 +34,11 @@ export default class RouterLink extends LightningElement {
 		if (route) {
 			event.preventDefault();
 
-			/**
-			 * There's no clear way to navigate to a nested route in LWR. A way around
-			 * this it to push the desired location into history and then go back one.
-			 */
 			window.history.pushState({}, '', this.href);
-			window.history.pushState({}, '', this.href);
-			window.history.back();
+			window.history.replaceState({}, '', this.href);
+
+			const popStateEvent = new PopStateEvent('popstate', {});
+			window.dispatchEvent(popStateEvent);
 		}
 	}
 }
