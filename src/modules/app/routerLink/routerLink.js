@@ -26,9 +26,23 @@ export default class RouterLink extends LightningElement {
 		let route = routes.find((x) => x.uri === this.href);
 
 		if (!route) {
-			route = routes.find(
-				(x) => false === x.exact && 0 === this.href.indexOf(x.uri + '/')
-			);
+			route = routes.find((x) => {
+				let u = x.uri + '/';
+
+				// Home links need to be '/'.
+				if ('//' === u) {
+					u = '/';
+				}
+
+				// If the item is a variable path, you can skip x.exact check and pass
+				// in the string before the :.
+				if (u.includes(':')) {
+					u = x.uri.split(':')[0];
+					return 0 === this.href.indexOf(u);
+				}
+
+				return false === x.exact && 0 === this.href.indexOf(u);
+			});
 		}
 
 		if (route) {
