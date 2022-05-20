@@ -1,24 +1,31 @@
 import routes from 'app/routes';
-import { api, LightningElement, wire } from 'lwc';
+import { api, LightningElement, track, wire } from 'lwc';
 import { generateUrl, NavigationContext } from 'lwr/navigation';
 
 export default class RouterLink extends LightningElement {
-	@api href;
+	@track _href;
 	@api target;
 	@api title;
 
 	@wire(NavigationContext) navContext;
 
+	@api set href(h) {
+		this._href = h;
+	}
+	get href() {
+		return this._href || false;
+	}
+
 	connectedCallback() {
 		if (!this.href && this.navContext && this.type) {
-			this.href = generateUrl(this.navContext, {
+			this._href = generateUrl(this.navContext, {
 				type: this.type,
 				attributes: this.atts,
 			});
 		}
 
 		if (this.href && 0 === this.href.indexOf(window.location.origin)) {
-			this.href = this.href.replace(window.location.origin, '');
+			this._href = this.href.replace(window.location.origin, '');
 		}
 	}
 

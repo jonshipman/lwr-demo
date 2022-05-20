@@ -3,8 +3,8 @@ import { createProxyMiddleware } from 'http-proxy-middleware';
 
 export const app = express();
 
-const PORT = parseInt(process.env.PORT || '3000');
-const LWR_PORT = parseInt(process.env.LWR_PORT || '3001');
+const PORT = parseInt(process.env.PORT || '3000', 10);
+const LWR_PORT = parseInt(process.env.LWR_PORT || '3001', 10);
 
 app.use(
 	'/*',

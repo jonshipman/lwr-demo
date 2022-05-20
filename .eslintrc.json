@@ -22,6 +22,9 @@
 		],
 		"no-throw-literal": "off",
 		"yoda": ["error", "always", { "onlyEquality": true }],
-			"@lwc/lwc/no-unknown-wire-adapters": "off"
+		"@lwc/lwc/no-async-operation": "off",
+		"@lwc/lwc/no-unknown-wire-adapters": "off",
+		"no-dupe-else-if": "off",
+		"no-use-before-define": "off"
 	}
 }
