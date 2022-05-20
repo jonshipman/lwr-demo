@@ -38,5 +38,9 @@
   "engines": {
     "node": ">=14.15.4 <17"
   },
+  "resolutions": {
+    "esbuild": "0.14.27",
+    "node-gyp": "latest"
+  },
   "packageManager": "yarn@3.2.0"
 }
