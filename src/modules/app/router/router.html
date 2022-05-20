@@ -1,9 +1,7 @@
 <template>
 	<lwr-router-container router={router}>
 		<app-view>
-			<lwr-outlet>
-				<div slot="error">Error: App Router Failed.</div>
-			</lwr-outlet>
+			<lwr-outlet onviewerror={handleError}></lwr-outlet>
 		</app-view>
 	</lwr-router-container>
 </template>
