@@ -15,7 +15,7 @@ src/layouts // HTML Layout
 
 ## Configuration
 
-The LWR server is configured in `lwr.config.json`, at the root of the project. This demo is setup with two routes (about and home "/") in a client-side routing configuration. The client routes are configured vertically in each parent module's routes module. Include the routes module inside `router/context`.
+The LWR server is configured in `lwr.config.json`, at the root of the project. This demo is setup with three routes (admin/dashboard, about, and home "/") in a client-side routing configuration. The client routes are configured vertically in each parent module's routes module. Include the routes module inside `router/context`.
 
 
 
