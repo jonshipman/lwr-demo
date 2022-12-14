@@ -15,7 +15,11 @@ src/layouts // HTML Layout
 
 ## Configuration
 
-The LWR server is configured in `lwr.config.json`, at the root of the project. This demo is setup with two routes (about and home "/") in a client-side routing configuration. The client routes are configured in src/modules/app/routes. The module ``app/routerLink`` is used in place of anchor tags for SPA navigating. For nested routes, point the module in app/routes to a secondary router (to create items such as about/history, about/staff, and so on). Nested route parents need "exact" set to false.
+The LWR server is configured in `lwr.config.json`, at the root of the project. This demo is setup with two routes (about and home "/") in a client-side routing configuration. The client routes are configured vertically in each parent module's routes module. Include the routes module inside `router/context`.
+
+
+
+The module ``router/link`` is used in place of anchor tags for SPA navigating. Nested routes can go up to five levels deep. If you need deeper, you can edit the `src/modules/router/create/routes.js` file.
 
 ## Running the Project
 
