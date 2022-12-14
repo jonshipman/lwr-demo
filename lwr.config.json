@@ -12,7 +12,7 @@
 		{
 			"id": "appRoot",
 			"path": "/*",
-			"rootComponent": "app/router",
+			"rootComponent": "router/create",
 			"layoutTemplate": "$layoutsDir/index.html"
 		}
 	]

@@ -6,34 +6,32 @@
 	"type": "module",
 	"scripts": {
 		"clean": "rimraf __lwr_cache__",
-		"start": "cross-env NODE_ENV=development concurrently \"yarn server:web\" \"yarn server:lwr\"",
-		"server:web": "node src/server/server-web.js",
-		"server:lwr": "node src/server/server-lwr.js"
+		"start": "cross-env NODE_ENV=development yarn server",
+		"server": "node src/server/server.js"
 	},
 	"devDependencies": {
-		"@babel/core": "^7.18.0",
-		"@babel/eslint-parser": "^7.17.0",
-		"@lwc/eslint-plugin-lwc": "^1.2.1",
-		"@salesforce/eslint-config-lwc": "^3.3.1",
+		"@babel/core": "^7.20.5",
+		"@babel/eslint-parser": "^7.19.1",
+		"@lwc/eslint-plugin-lwc": "^1.5.0",
+		"@salesforce/eslint-config-lwc": "^3.3.3",
 		"@salesforce/eslint-plugin-lightning": "^1.0.0",
 		"cross-env": "^7.0.3",
-		"eslint": "^8.15.0",
+		"eslint": "^8.29.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-import": "^2.26.0",
-		"eslint-plugin-jest": "^26.2.2",
-		"eslint-plugin-prettier": "^4.0.0",
-		"jest": "^28.1.0",
-		"postcss": "^8.4.14",
-		"prettier": "^2.6.2",
+		"eslint-plugin-jest": "^27.1.6",
+		"eslint-plugin-prettier": "^4.2.1",
+		"jest": "^29.3.1",
+		"postcss": "^8.4.20",
+		"prettier": "^2.8.1",
 		"rimraf": "^3.0.2"
 	},
 	"dependencies": {
-		"@lwrjs/router": "^0.6.5",
-		"concurrently": "^7.2.0",
-		"express": "^4.18.1",
+		"@lwrjs/router": "^0.8.8",
+		"express": "^4.18.2",
 		"http-proxy-middleware": "^2.0.6",
-		"lwc": "^2.13.3",
-		"lwr": "^0.6.5"
+		"lwc": "^2.34.0",
+		"lwr": "^0.8.8"
 	},
 	"engines": {
 		"node": ">=14.15.4 <17"

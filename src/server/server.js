@@ -1,5 +1,6 @@
 import express from 'express';
 import { createProxyMiddleware } from 'http-proxy-middleware';
+import createServer from './lwr.cjs';
 
 export const app = express();
 
@@ -16,4 +17,15 @@ app.use(
 
 app.listen(PORT, () => {
 	console.log(`Express started on http://localhost:${PORT}`);
+});
+
+const lwrServer = createServer({
+	serverMode: 'development' === process.env.NODE_ENV ? 'dev' : 'prod-compat',
+	port: LWR_PORT,
+});
+
+lwrServer.listen(({ port }) => {
+	console.log(
+		`⚡Lightning Web Runtime⚡ listening on http://localhost:${port}`
+	);
 });

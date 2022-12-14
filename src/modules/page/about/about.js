@@ -1,3 +1,3 @@
-import { LightningElement } from 'lwc';
+import Element from 'app/element';
 
-export default class About extends LightningElement {}
+export default class About extends Element {}
